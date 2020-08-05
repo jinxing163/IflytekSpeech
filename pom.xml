@@ -115,19 +115,40 @@
 
         <!--  讯飞语音依赖 end -->
 
+
+        <!--需要下载jacob-1.18，网上一堆-->
+        <!-- https://mvnrepository.com/artifact/com.jacob/jacob 文字转语音 -->
+        <dependency>
+            <groupId>com.hynnet</groupId>
+            <artifactId>jacob</artifactId>
+            <version>1.18</version>
+        </dependency>
+
+
     </dependencies>
 
 
-
-      <build>
+    <build>
         <plugins>
+
+            <!--打jar包的时候把本地的 jar 包也打进去：-->
+            <plugin>
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot-maven-plugin</artifactId>
+                <configuration>
+                    <mainClass>com.iflytek.DemoApplication</mainClass>
+                    <executable>true</executable>
+                    <includeSystemScope>true</includeSystemScope>
+                </configuration>
+            </plugin>
+
             <plugin>
                 <groupId>org.springframework.boot</groupId>
                 <artifactId>spring-boot-maven-plugin</artifactId>
 
                 <dependencies>
                     <!-- spring热部署 -->
-<!--                    spring-boot:run -DskipTests-->
+                    <!--                    spring-boot:run -DskipTests-->
                 </dependencies>
 
             </plugin>
@@ -135,8 +156,8 @@
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-compiler-plugin</artifactId>
                 <configuration>
-                    <source>${java.version}</source>
-                    <target>${java.version}</target>
+                    <source>1.8</source>
+                    <target>1.8</target>
                     <encoding>${project.build.sourceEncoding}</encoding>
                 </configuration>
             </plugin>

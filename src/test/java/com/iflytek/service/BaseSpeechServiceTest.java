@@ -4,6 +4,7 @@ import com.iflytek.BaseTest;
 import org.junit.Test;
 
 import javax.annotation.Resource;
+import java.util.concurrent.ExecutionException;
 
 /**
  * @author JinXing
@@ -18,10 +19,11 @@ public class BaseSpeechServiceTest extends BaseTest {
     public void textToSpeech() {
 
         String text = getText();
-        String substring = text.substring(0, 100);
-
-
-        baseSpeechService.textToSpeech(substring);
+        try {
+            baseSpeechService.textToSpeech(text);
+        } catch (InterruptedException | ExecutionException e) {
+            e.printStackTrace();
+        }
     }
 
     /**
