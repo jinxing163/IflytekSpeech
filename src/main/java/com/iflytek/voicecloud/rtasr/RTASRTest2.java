@@ -28,9 +28,9 @@ import java.util.Objects;
 import java.util.concurrent.CountDownLatch;
 
 /**
- * 实时转写调用demo 此demo只是一个简单的调用示例，不适合用到实际生产环境中 Unity 讯飞实时语音转写（一）—— 使用WebSocket连接讯飞语音服务器
- * https://blog.csdn.net/u013283476/article/details/108643503
- *
+ * 实时转写调用demo 此demo只是一个简单的调用示例，不适合用到实际生产环境中
+ * https://blog.csdn.net/u013283476/article/details/108643503  使用WebSocket连接讯飞语音服务器
+ * https://www.cnblogs.com/simuhunluo/p/8343334.html websocket通信 实现java模拟一个client与webclient通信
  * @author white
  */
 public class RTASRTest2 {
